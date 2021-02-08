@@ -1,0 +1,23 @@
+ 
+
+ <div *ngIf="user">
+     <img src="{{user.avatar}} " alt="">
+     <h2> {{user.first_name + '' + user.last_name}} </h2>
+    
+ </div>
+
+ <h2>CREAR USUARIO</h2>
+ <form #newUser="ngForm"(ngSubmit)="onSubmit(newUser)" >
+     <p>
+         <label for="name">Nombre</label>
+         <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required>
+     </p>
+
+     <p>
+        <label for="job">Trabajo</label>
+        <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+    </p>
+
+<input type="submit" value="Guardar usuario">
+
+ </form>
